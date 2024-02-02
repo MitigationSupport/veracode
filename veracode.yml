@@ -77,6 +77,7 @@ veracode_iac_secrets_scan:
   break_build_policy_findings: true
   #If the break_build_on_error is set to true, the build will break if the scan failed to complete, no libraries found or on any other error.
   break_build_on_error: true
+  profile_name: 'Sample ProfileName'
   #If the break_build_on_policy_error is set to true, this is the error message that will be displayed if the IaC/Secrets scan fails to complete, no libraries found or on any other error.
   error_message: "Veracode SCA scan faced a problem. Please contact your Veracode administrator for more information. If you are a Veracode administrator, please contact Veracode support."
 
