@@ -6,6 +6,9 @@ on:
       policy_name:
         required: true
         type: string
+      profile_name:
+        required: true
+        type: string  
 
   
 jobs:
