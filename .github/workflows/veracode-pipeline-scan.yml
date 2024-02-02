@@ -35,8 +35,14 @@ jobs:
         uses: testallrepos/Veracode-pipeline-scan-action@main
         with:
           appname: ${{ inputs.profile_name }}
-          vid: ${{ secrets.VERACODE_API_ID }}
-          vkey: ${{ secrets.VERACODE_API_KEY }}
+          createprofile: true
+          policy: ${{ inputs.policy_name }}
+          version: '${{ github.run_id }}'
+          filepath: ./veracode_artifact_directory/${{ env.veracode_artifact }}
           veracode_policy_name: ${{ inputs.policy_name }}
-          file: ./veracode_artifact_directory/${{ env.veracode_artifact }}
-          fail_build: true
+          vid: '${{ secrets.VERACODE_API_ID }}'
+          vkey: '${{ secrets.VERACODE_API_KEY }}'
+          #scanpollinginterval: 30
+          scantimeout: 15
+          include: ${{ inputs.modules_to_scan }}
+          failbuild: true
