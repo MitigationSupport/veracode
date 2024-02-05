@@ -21,7 +21,7 @@ veracode_static_scan:
   policy: Veracode Recommended Medium + SCA
   compile_locally: false
   local_compilation_workflow: na
-  profile_name: Sample ProfileName22
+  profile_name: Sample ProfileName4444
   veracode_sca_scan:
     push:
       trigger: true
