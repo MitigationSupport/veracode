@@ -38,7 +38,8 @@ jobs:
       # run the pipeline scan action
       - name: Veracode Pipeline-Scan
         id: pipeline-scan
-        uses: testallrepos/Veracode-pipeline-scan-action@main
+       # uses: testallrepos/Veracode-pipeline-scan-action@main
+        uses: veracode/workflow-app-helper@main
         with:
           appname: ${{ inputs.profile_name }}
           createprofile: true
