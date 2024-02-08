@@ -52,7 +52,7 @@ jobs:
       - name: Veracode Pipeline Results
         uses: veracode/workflow-app-helper@main
         with:
-          action: 'preparePolicyResults'
+          action: 'preparePipelineResults'
           vid: ${{ secrets.VERACODE_API_ID }}
           vkey: ${{ secrets.VERACODE_API_KEY }}
           appname: ${{ inputs.profile_name }}
