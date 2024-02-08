@@ -12,6 +12,9 @@ on:
       action:
         required: true
         type: string    
+      token:
+        required: true
+        type: string       
 
   
 jobs:
