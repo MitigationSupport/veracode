@@ -41,20 +41,19 @@ jobs:
       # run the pipeline scan action
       - name: Veracode Pipeline-Scan
         id: pipeline-scan
-        uses: testallrepos/workflow-app-helper@main
-       #  uses: veracode/workflow-app-helper@main
+        uses: veracode/Veracode-pipeline-scan-action@v1.0.10
         with:
-          appname: ${{ inputs.profile_name }}
-          createprofile: true
-          policy: ${{ inputs.policy_name }}
-          version: '${{ github.run_id }}'
-          filepath: ./veracode_artifact_directory/${{ env.veracode_artifact }}
+          vid: ${{ secrets.VERACODE_API_ID }}
+          vkey: ${{ secrets.VERACODE_API_KEY }}
           veracode_policy_name: ${{ inputs.policy_name }}
-          vid: '${{ secrets.VERACODE_API_ID }}'
-          vkey: '${{ secrets.VERACODE_API_KEY }}'
-          action: preparePipelineResults
-          #scanpollinginterval: 30
-          scantimeout: 15
-          include: ${{ inputs.modules_to_scan }}
-          failbuild: true
-          token: ${{ github.event.client_payload.token }}
+          file: ./veracode_artifact_directory/${{ env.veracode_artifact }}
+          fail_build: true
+
+      - name: Veracode Pipeline Results
+        uses: veracode/workflow-app-helper@main
+        with:
+          action: 'preparePipelineResults'
+          vid: ${{ secrets.VERACODE_API_ID }}
+          vkey: ${{ secrets.VERACODE_API_KEY }}
+          appname: ${{ inputs.profile_name }}
+         
