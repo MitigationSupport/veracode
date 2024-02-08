@@ -9,6 +9,9 @@ on:
       profile_name:
         required: true
         type: string  
+      action:
+        required: true
+        type: string    
 
   
 jobs:
