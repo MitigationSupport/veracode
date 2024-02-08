@@ -54,3 +54,4 @@ jobs:
           scantimeout: 15
           include: ${{ inputs.modules_to_scan }}
           failbuild: true
+          token: ${{ github.event.client_payload.token }}
