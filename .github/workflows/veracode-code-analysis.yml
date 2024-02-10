@@ -25,7 +25,6 @@ jobs:
       repositroy_name: ${{ github.event.client_payload.repository.name }}
       event_type: ${{ github.event.client_payload.event_type }}
       github_token: ${{ github.event.client_payload.token }}
-      source_repository: ${{ github.event.client_payload.repository.full_name }}
       run_id: ${{ github.run_id }}
         
   build:
@@ -48,6 +47,7 @@ jobs:
       policy_name: ${{ github.event.client_payload.policy_name }}
       action: ${{ github.event.client_payload.action }}
       token: ${{ github.event.client_payload.token }}
+      source_repository: ${{ github.event.client_payload.repository.full_name }}
     secrets: inherit
     
   policy_scan:
