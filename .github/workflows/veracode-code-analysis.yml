@@ -49,7 +49,6 @@ jobs:
       token: ${{ github.event.client_payload.token }}
       source_repository: ${{ github.event.client_payload.repository.full_name }}
       check_run_id: ${{ needs.create-checks-run.outputs.check_run_id }}
-      run: echo "Repository Full Name: ${{ github.event.client_payload.repository.full_name }}"
     secrets: inherit
     
   policy_scan:
