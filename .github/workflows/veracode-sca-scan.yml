@@ -39,7 +39,7 @@ jobs:
           SRCCLR_API_TOKEN: ${{ secrets.VERACODE_AGENT_TOKEN }}
         uses: veracode/veracode-sca@v2.1.9
         with:
-          appname: ${{ inputs.profile_name }}
+          appname: 'testing11022024'
           createprofile: true  
           version: '${{ github.run_id }}'
           filepath: ./veracode_artifact_directory/${{ env.veracode_artifact }}
