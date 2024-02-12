@@ -59,7 +59,7 @@ jobs:
         uses: testallrepos/workflow-app-helper@main
        # uses: veracode/workflow-app-helper@main
         with:
-          action: 'preparePipelineResults'
+          action: 'getPolicyNameByProfileName'
           vid: ${{ secrets.VERACODE_API_ID }}
           vkey: ${{ secrets.VERACODE_API_KEY }}
           appname: ${{ inputs.profile_name }}
