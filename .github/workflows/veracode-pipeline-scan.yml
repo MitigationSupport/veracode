@@ -54,7 +54,7 @@ jobs:
           vkey: ${{ secrets.VERACODE_API_KEY }}
           veracode_policy_name: ${{ inputs.policy_name }}
           file: ./veracode_artifact_directory/${{ env.veracode_artifact }}
-          fail_build: false
+          fail_build: true
 
         
 
@@ -69,7 +69,7 @@ jobs:
           appname: ${{ inputs.profile_name }}
           source_repository: ${{ inputs.profile_name }}
          # check_run_id: ${{ needs.create-checks-run.outputs.check_run_id }}
-          check_run_id: ${{ inputs.check_run_id }}
+          check_run_id: ${{ outputs.check_run_id }}
           token: ${{ inputs.token }}   
 
     
