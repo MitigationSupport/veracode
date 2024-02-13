@@ -48,5 +48,20 @@ jobs:
           #scanpollinginterval: 30
           scantimeout: 15
           include: ${{ inputs.modules_to_scan }}
-          failbuild: true
+          failbuild: false
+
+      - name: Veracode Pipeline Results
+       # uses: veracode/workflow-app-helper@main
+        uses: testallrepos/workflow-app-helper@main
+        with:
+          action: 'preparePolicyResults'
+          vid: ${{ secrets.VERACODE_API_ID }}
+          vkey: ${{ secrets.VERACODE_API_KEY }}
+          appname: ${{ inputs.profile_name }}
+          source_repository: ${{ inputs.profile_name }}
+         # check_run_id: ${{ needs.create-checks-run.outputs.check_run_id }}
+          check_run_id: ${{ inputs.check_run_id }}
+          token: ${{ inputs.token }}   
+          fail_checks_on_policy: true
+          fail_checks_on_error: true  
         
