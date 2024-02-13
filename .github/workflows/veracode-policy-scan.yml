@@ -51,8 +51,8 @@ jobs:
           failbuild: false
 
       - name: Veracode Pipeline Results
-       # uses: veracode/workflow-app-helper@main
-        uses: testallrepos/workflow-app-helper@main
+        uses: veracode/workflow-app-helper@main
+        #uses: testallrepos/workflow-app-helper@main
         with:
           action: 'preparePolicyResults'
           vid: ${{ secrets.VERACODE_API_ID }}
