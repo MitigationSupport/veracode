@@ -55,6 +55,7 @@ jobs:
         
 
       - name: Veracode Pipeline Results
+        if: always()
         uses: testallrepos/workflow-app-helper@main
        # uses: veracode/workflow-app-helper@main
         with:
