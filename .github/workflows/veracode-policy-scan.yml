@@ -54,7 +54,7 @@ jobs:
           filepath: ./veracode_artifact_directory/${{ env.veracode_artifact }}
           vid: '${{ secrets.VERACODE_API_ID }}'
           vkey: '${{ secrets.VERACODE_API_KEY }}'
-          check_run_id: ${{ inputs.check_run_id }}
+          #check_run_id: ${{ inputs.check_run_id }}
           #scanpollinginterval: 30
           scantimeout: 15
           include: ${{ inputs.modules_to_scan }}
