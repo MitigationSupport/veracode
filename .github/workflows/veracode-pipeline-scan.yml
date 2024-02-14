@@ -64,6 +64,7 @@ jobs:
           appname: ${{ inputs.profile_name }}
           check_run_id: ${{ inputs.check_run_id }}
           source_repository: ${{ inputs.profile_name }}
+          token: ${{ inputs.token }}
 
           
 
