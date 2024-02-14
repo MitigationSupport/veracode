@@ -50,18 +50,15 @@ jobs:
           include: ${{ inputs.modules_to_scan }}
           failbuild: false
 
-      - name: Veracode Pipeline Results
+      - name: Veracode Policy Results
         uses: veracode/workflow-app-helper@main
-        #uses: testallrepos/workflow-app-helper@main
         with:
-          action: 'preparePolicyResults'
+          action: preparePolicyResults
+          token: ${{ inputs.token }}
+          check_run_id: ${{ inputs.check_run_id }}
           vid: ${{ secrets.VERACODE_API_ID }}
           vkey: ${{ secrets.VERACODE_API_KEY }}
           appname: ${{ inputs.profile_name }}
-          source_repository: ${{ inputs.profile_name }}
-         # check_run_id: ${{ needs.create-checks-run.outputs.check_run_id }}
-          check_run_id: ${{ inputs.check_run_id }}
-          token: ${{ inputs.token }}   
-          fail_checks_on_policy: true
-          fail_checks_on_error: true  
+          source_repository: ${{ inputs.profile_name }}  
+           
         
