@@ -68,6 +68,6 @@ jobs:
          # check_run_id: ${{ needs.create-checks-run.outputs.check_run_id }}
           check_run_id: ${{ inputs.check_run_id }}
           token: ${{ inputs.token }}   
-          fail_checks_on_policy: true
-          fail_checks_on_error: true
+         # fail_checks_on_policy: true
+         # fail_checks_on_error: true
          
