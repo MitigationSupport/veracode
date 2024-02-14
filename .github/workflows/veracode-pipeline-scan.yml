@@ -53,7 +53,19 @@ jobs:
           vkey: ${{ secrets.VERACODE_API_KEY }}
           veracode_policy_name: ${{ inputs.policy_name }}
           file: ./veracode_artifact_directory/${{ env.veracode_artifact }}
-          fail_build: true
+          fail_build: false
+
+      - name: Veracode Pipeline Results
+        uses: veracode/workflow-app-helper@main
+        with:
+          action: preparePipelineResults
+          token: ${{ inputs.token }}
+          check_run_id: ${{ inputs.check_run_id }}
+          vid: ${{ secrets.VERACODE_API_ID }}
+          vkey: ${{ secrets.VERACODE_API_KEY }}
+          appname: ${{ inputs.profile_name }}
+          source_repository: ${{ inputs.profile_name }}
+         
 
           
 
