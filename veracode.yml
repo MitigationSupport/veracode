@@ -16,7 +16,7 @@ veracode_static_scan:
       - opened
       - synchronize
     target_branch:
-      - main
+      - master
      
   # What branch would you like to use for platform analysis 
   # By selecting a branch here - Veracode will save your last scan result
