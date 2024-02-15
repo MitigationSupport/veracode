@@ -58,7 +58,7 @@ jobs:
           #scanpollinginterval: 30
           scantimeout: 15
           include: ${{ inputs.modules_to_scan }}
-          failbuild: false
+          failbuild: true
 
       - name: Veracode Policy Results
         uses: veracode/workflow-app-helper@main
