@@ -61,6 +61,7 @@ jobs:
           failbuild: true
 
       - name: Veracode Policy Results
+        if: always() 
         uses: veracode/workflow-app-helper@main
         with:
           action: preparePolicyResults
