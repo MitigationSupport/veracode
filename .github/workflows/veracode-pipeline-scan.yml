@@ -50,18 +50,7 @@ jobs:
           action: 'getPolicyNameByProfileName'
           vid: ${{ secrets.VERACODE_API_ID }}
           vkey: ${{ secrets.VERACODE_API_KEY }}
-          appname: ${{ inputs.profile_name }}    
-
-      # run the pipeline scan action
-      - name: Veracode Pipeline-Scan
-        id: pipeline-scan
-        uses: veracode/Veracode-pipeline-scan-action@v1.0.10
-        with:
-          vid: ${{ secrets.VERACODE_API_ID }}
-          vkey: ${{ secrets.VERACODE_API_KEY }}
-          veracode_policy_name: ${{ inputs.policy_name }}
-          file: ./veracode_artifact_directory/${{ env.veracode_artifact }}
-          fail_build: false
+          appname: ${{ inputs.profile_name }} 
 
       - name: Veracode Pipeline Results
        # if: always() 
@@ -77,6 +66,19 @@ jobs:
           source_repository: ${{ inputs.profile_name }}  
           fail_checks_on_policy: true
           fail_checks_on_error: true
+
+      # run the pipeline scan action
+      - name: Veracode Pipeline-Scan
+        id: pipeline-scan
+        uses: veracode/Veracode-pipeline-scan-action@v1.0.10
+        with:
+          vid: ${{ secrets.VERACODE_API_ID }}
+          vkey: ${{ secrets.VERACODE_API_KEY }}
+          veracode_policy_name: ${{ inputs.policy_name }}
+          file: ./veracode_artifact_directory/${{ env.veracode_artifact }}
+          fail_build: false
+
+     
 
      
          
