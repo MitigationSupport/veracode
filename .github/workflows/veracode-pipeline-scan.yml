@@ -66,20 +66,7 @@ jobs:
           fail_build: false
 
 
-      - name: Veracode Pipeline Results
-       # if: always() 
-        uses: veracode/workflow-app-helper@main
-      #  uses: testallrepos/workflow-app-helper@main
-        with:
-          action: preparePipelineResults
-          token: ${{ inputs.token }}
-          check_run_id: ${{ inputs.check_run_id }}
-          vid: ${{ secrets.VERACODE_API_ID }}
-          vkey: ${{ secrets.VERACODE_API_KEY }}
-          appname: ${{ inputs.profile_name }}
-          source_repository: ${{ inputs.profile_name }}  
-          fail_checks_on_policy: true
-          fail_checks_on_error: true   
+    
 
      
 
