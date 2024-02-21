@@ -70,6 +70,6 @@ jobs:
           vid: ${{ secrets.VERACODE_API_ID }}
           vkey: ${{ secrets.VERACODE_API_KEY }}
           appname: ${{ inputs.profile_name }}
-          source_repository: ${{ inputs.profile_name }}  
+          source_repository: ${{ inputs.source_repository }}  
            
         
