@@ -31,7 +31,7 @@ veracode_static_scan:
   error_message: "Veracode SAST scan faced a problem. Please contact your Veracode administrator for more information. If you are a Veracode administrator, please contact Veracode support."
   policy: 'Veracode Recommended Medium + SCA'
   compile_locally: false
-  #profile_name: testingone111
+  profile_name: testingone111
   local_compilation_workflow: na
   action: preparePipelineResults
   
