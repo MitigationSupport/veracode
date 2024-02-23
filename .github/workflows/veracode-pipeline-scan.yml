@@ -68,7 +68,7 @@ jobs:
       - name: Veracode Pipeline Results
         if: always() 
        # uses: veracode/workflow-app-helper@main
-       uses: testallrepos/workflow-app-helper@main
+        uses: testallrepos/workflow-app-helper@main
         with:
           action: preparePipelineResults
           token: ${{ inputs.token }}
