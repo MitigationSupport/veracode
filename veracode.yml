@@ -32,7 +32,7 @@ veracode_static_scan:
   policy: 'Veracode Recommended Medium + SCA'  
   #policy: Veracode Recommended Very High + SCA
   compile_locally: false
-  #profile_name: testingone111
+  profile_name: testingone2602
   local_compilation_workflow: na
   action: preparePipelineResults
   
